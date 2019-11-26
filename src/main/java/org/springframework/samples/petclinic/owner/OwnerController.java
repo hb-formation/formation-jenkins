@@ -66,7 +66,8 @@ class OwnerController {
     public String processCreationForm(@Valid Owner owner, BindingResult result) {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
-        } else {
+        } 
+		else {
             this.owners.save(owner);
             return "redirect:/owners/" + owner.getId();
         }
@@ -114,7 +115,8 @@ class OwnerController {
     public String processUpdateOwnerForm(@Valid Owner owner, BindingResult result, @PathVariable("ownerId") int ownerId) {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
-        } else {
+        } 
+		else {
             owner.setId(ownerId);
             this.owners.save(owner);
             return "redirect:/owners/{ownerId}";
